@@ -18,7 +18,6 @@ So please install those if you haven't already
 
 6. Now make sure that your system is configured correctly. Open up ./app/config/config.yml
 
-#Services, for those classes that you use constantly
     services:
         curl:
             class:      MRX\ServiceTalkBundle\Curl\MultiCurlRequest
