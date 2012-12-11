@@ -5,7 +5,7 @@
  * that is really easy to use, and multi-threaded. It also has a chainable
  * structure.
  *
- * Note: setting the server ip will  
+ * Note: Setting the server ip will skip DNS lookup.
  * 
  * @author Justin Fortier
  *
@@ -14,11 +14,11 @@
  * $responses = MultiCurlRequest::create()
  *           ->open()
  *               ->setServer('127.0.0.1')
- *               ->setUrl("http://api.logger.jfortier.mrx.ca/app_dev.php/changelog/object/systemlog/1.xml")
+ *               ->setUrl("http://api.logger.service.com/changelog/object/systemlog/1.xml")
  *           ->close()
  *           ->open()
  *               ->setServer('127.0.0.1')
- *               ->setUrl("http://api.logger.jfortier.mrx.ca/app_dev.php/changelog/object/systemlog/10.xml")
+ *               ->setUrl("http://api.logger.service.com/changelog/object/systemlog/10.xml")
  *           ->close()
  *           ->open()
  *               ->setUrl("http://google.ca")
@@ -30,11 +30,9 @@
  * careful to not override child methods by accident.
  */
 
-namespace MRX\ServiceTalkBundle\Curl;
+namespace MultiCurl\Lib;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-
-class MultiCurlRequest extends Bundle
+class MultiCurlRequest
 {
     protected $stack = array();
     protected $handles = array();

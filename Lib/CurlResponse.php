@@ -13,11 +13,9 @@
  *  $response->getContentType();
  */
 
-namespace MRX\ServiceTalkBundle\Curl;
+namespace MultiCurl\Lib;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-
-class CurlResponse extends Bundle
+class CurlResponse
 {
     protected $ch;
     protected $header;

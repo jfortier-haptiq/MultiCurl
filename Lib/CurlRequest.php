@@ -8,16 +8,14 @@
  *
  * Usage:
  *  $resp = $curl = CurlRequest::create()
- *      ->setMethod("GET")
- *      ->setUrl("http://api.logger.jfortier.mrx.ca/app_dev.php/changelog/object/systemlog/1.xml")
+ *      ->setMethod( CurlRequest::GET )
+ *      ->setUrl("http://api.logger.service.com/changelog/object/systemlog/1.xml")
  *      ->send( );
  */
 
-namespace MRX\ServiceTalkBundle\Curl;
+namespace MultiCurl\Lib;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-
-class CurlRequest extends Bundle
+class CurlRequest
 {
     const METHOD_GET = 'GET';
     const METHOD_PUT = 'PUT';
@@ -181,7 +179,7 @@ class CurlRequest extends Bundle
     /**
      * Alter header performs a small optimization to use an
      * ip so you don't have to do any DNS resolving. Should
-     * save us some time.
+     * save some time.
      */
     public function alterHeader( )
     {

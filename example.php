@@ -1,10 +1,4 @@
-#MultiCurl
-
-Allows you to interact with Curl like an object, great for interacting with REST APIs! Free to use under MIT License.
-
-Example:
-
-namespace MultiCurl;
+<?php
 
 include 'Lib/CurlRequest.php';
 include 'Lib/CurlResponse.php';
@@ -16,19 +10,21 @@ use MultiCurl\Lib\MultiCurlRequest;
 $responses = MultiCurlRequest::create()
         ->open()
             ->setUrl("http://google.ca")
-            ->setMethod( CurlRequest::METHOD_GET )
+            //Can be GET, PUT, POST, HEAD, DELETE
+            ->setMethod( CurlRequest::METHOD_GET ) 
         ->close()
         ->open()
             ->setUrl("http://yahoo.ca")
             ->setMethod( CurlRequest::METHOD_GET )
         ->close()
     ->send();
-Responses come back inside objects as well.
-
+    
+//Responses is an array of response objects for MultiCurl
+//Same order in / Same order out
 foreach( $responses as $x=>$response )
 {
     print "Response: {$x}<br />";
     print "====================<br />";
-    print $response->getBody();
+    print_r( $response );
     print "====================<br />";
 }

@@ -1,0 +1,1 @@
+Yeah I still need to write some tests for this sucker. PHPUnit if anyone is interested in taking the lead here.
