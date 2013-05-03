@@ -5,7 +5,7 @@
  * that is really easy to use, and multi-threaded. It also has a chainable
  * structure.
  *
- * Note: Setting the server ip will skip DNS lookup.
+ * Note: Setting the server IP address will skip DNS lookup.
  * 
  * @author Justin Fortier
  *

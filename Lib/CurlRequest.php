@@ -61,7 +61,7 @@ class CurlRequest
         $this->ch = curl_init();
         
         if($this->server)
-        {   //server ip was specified.. do some "magic"
+        {   //server IP address was specified.. do some "magic"
             $this->alterHeader();
         }
                         
@@ -178,8 +178,8 @@ class CurlRequest
     
     /**
      * Alter header performs a small optimization to use an
-     * ip so you don't have to do any DNS resolving. Should
-     * save some time.
+     * IP address so you don't have to do any DNS resolving. 
+     * Should save some time.
      */
     public function alterHeader( )
     {
@@ -189,7 +189,7 @@ class CurlRequest
         
         //Is there a query string?
         $path = "";
-        if( isset($url_parts['query']) )
+        if( array_key_exists('query', $url_parts) )
         {
             $path = $url_parts['path'] . "?" . $url_parts['query'];
         }
