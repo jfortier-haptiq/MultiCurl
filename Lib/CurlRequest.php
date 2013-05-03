@@ -88,6 +88,7 @@ class CurlRequest
     public function setHeaderOption( $key, $value )
     {
         $this->header_options[ $key ] = $value;
+        return $this;
     }
     
     /**
